@@ -1,0 +1,29 @@
+# playbook.yaml
+
+---
+- name: Install and configure Nginx
+  hosts: servers
+  become: true
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Copy index.html to the server
+      copy:
+        src: ./index.html  # Путь к вашему файлу index.html
+        dest: /var/www/html/index.html  # Путь на сервере, куда нужно скопировать файл
+        owner: www-data
+        group: www-data
+        mode: '0644'
+
+    - name: Ensure Nginx is running and enabled
+      service:
+        name: nginx
+        state: started
+        enabled: yes
