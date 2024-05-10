@@ -12,7 +12,7 @@
 
 
 
-Подробности. 
+## Подробности. ##
 Погнали по командам, чтобы запуститься надо чтобы был настроен yc.
 
 Дальше создали сервисный аккаунт 
@@ -43,8 +43,11 @@ export YC_FOLDER_ID=$(yc config get folder-id)
 ```
 
 Дальше чтобы меньше файлов ложить в гит и чтобы все работало с 1 запускаемого файла и чтобы баг который чуть ниже описан, и дальше чтобы виртуалка успела запуститься стоит время в 60 секунд паузы между виртуалкой и ансиблом плейбуком, сделал bash скрипт start.sh 
+
 Согласно бага яндекса и терраформа 
-https://yandex.cloud/ru/docs/troubleshooting/compute/known-issues/permission-denied-error-when-connected-as-user-created-from-terraform-manifest
+
+`https://yandex.cloud/ru/docs/troubleshooting/compute/known-issues/permission-denied-error-when-connected-as-user-created-from-terraform-manifest`
+
 Можно конечно еще пострадать и перехерачить чегото, но в целом трохи гдето прокачался, гдето понял что кнопку сделать "Сделать все пи....!" сделать можно, но костылями. 
 В дополнение чтобы понимать что Nginx мой и заработал закидываю в него файл index.html чтобы в браузере открывался и показывал. 
 
